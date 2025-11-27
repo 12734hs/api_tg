@@ -33,5 +33,5 @@ Location: {e['location']}
         """)
     print(passage)
 
-#print(name_surname, scores)
-#print_events()
+print(name_surname, scores)
+print_events()
