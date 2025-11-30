@@ -1,13 +1,13 @@
 import requests
+import config
 
 headers = {
-    "X-API-KEY": "c612c439d54a20c20ef53aecde0967c7",
+    "X-API-KEY": config.api_key_holberton,
     "cfclearance": "true",
     "Accept": "application/json"
 }
-id = 12734
 
-students_information = requests.get(f"https://intranet.hbtn.io/api/v1/students/{id}",headers=headers).json()
+students_information = requests.get(f"https://intranet.hbtn.io/api/v1/students/{config.id_holberton}",headers=headers).json()
 events_information = requests.get('https://intranet.hbtn.io/api/v1/events', headers=headers).json()
 
 name_surname = f"---------------------------------\n{students_information['first_name']} {students_information['last_name']} - {students_information['id']}"
@@ -30,8 +30,5 @@ Start: {e['start_at']}
 End:   {e['end_at']}
 Location: {e['location']}
 ---------------------------------
-        """)
-    print(passage)
-
-print(name_surname, scores)
-print_events()
+""")
+    return passage
