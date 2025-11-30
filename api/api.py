@@ -32,3 +32,5 @@ Location: {e['location']}
 ---------------------------------
 """)
     return passage
+
+print(events_information)
